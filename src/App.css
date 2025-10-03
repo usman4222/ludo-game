@@ -81,6 +81,16 @@ hr {
     display: none;
   }
   .dice-container{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+.refresh-game-btn {
+  display: block; /* default visible */
+}
+
+@media (max-width: 768px) {
+  .refresh-game-btn {
+    display: none; /* hide on small screens */
   }
 }

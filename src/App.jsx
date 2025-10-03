@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Board from "./components/Board";
 import Dice from "./components/Dice";
 import Settings from "./components/Settings";
@@ -8,9 +8,54 @@ import GameOver from "./components/GameOver";
 import PlayerChance from "./components/PlayerChance";
 import Setup from "./components/Setup";
 
-function GameWrapper() {
-  const { gameStarted } = useGameContext();
+// Custom modal component
+const ConfirmModal = ({ message, onConfirm, onCancel }) => {
+  return (
+    <div className="modal-overlay">
+      <div className="modal-box">
+        <p>{message}</p>
+        <div className="modal-buttons">
+          <button onClick={onConfirm}>Yes</button>
+          <button onClick={onCancel}>No</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function AppContent() {
+  const { gameStarted, resetGame } = useGameContext();
   const [boardRotate, setBoardRotate] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+
+  // Native browser refresh/close warning
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      if (gameStarted) {
+        e.preventDefault();
+        e.returnValue = "Are you sure? Game will reset!";
+      }
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [gameStarted]);
+
+  // In-app Refresh Game button
+  const handleRefreshClick = () => {
+    setShowModal(true);
+  };
+
+  const handleConfirm = () => {
+    setShowModal(false);
+    resetGame(); // Reset game state
+  };
+
+  const handleCancel = () => {
+    setShowModal(false);
+  };
 
   if (!gameStarted) {
     return (
@@ -22,6 +67,13 @@ function GameWrapper() {
 
   return (
     <>
+      {showModal && (
+        <ConfirmModal
+          message="Are you sure? Game will reset!"
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+        />
+      )}
       <GameOver />
       <div className="mobile-current-player">
         <PlayerChance />
@@ -37,6 +89,10 @@ function GameWrapper() {
         <div className="dice-container">
           <Dice />
         </div>
+        {/* In-app Refresh Game button */}
+        <button onClick={handleRefreshClick} className="refresh-game-btn">
+          Refresh Game
+        </button>
       </div>
     </>
   );
@@ -46,7 +102,7 @@ function App() {
   return (
     <GameProvider>
       <div className="App">
-        <GameWrapper />
+        <AppContent />
       </div>
     </GameProvider>
   );
