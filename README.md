@@ -5,7 +5,7 @@ This project is a simple Ludo game built using React. It allows 4 players to pla
 
 ## Live Demo
 
-You can play the game live at [this link](https://sskhekhaliya.github.io/Ludo-react/).
+You can play the game live at [this link](https://ludo-game-pied.vercel.app/).
 
 ## Available Scripts
 **Getting Started**
@@ -18,7 +18,7 @@ You can play the game live at [this link](https://sskhekhaliya.github.io/Ludo-re
    - Clone this repository using the following command:
 
      ```bash
-     git clone [https://github.com/sskhekhaliya/Ludo-react.git](https://github.com/sskhekhaliya/Ludo-react.git)
+     git clone [https://github.com/usman4222/ludo-game.git](https://github.com/usman4222/ludo-game.git)
      ```
 
 3. **Installation:**
@@ -60,20 +60,3 @@ You can play the game live at [this link](https://sskhekhaliya.github.io/Ludo-re
 5. Unlock the dice by clicking on the tokens of the correct color.
 6. Turns move in a clockwise fashion starting from red.
 
-
-
-## Author
-
-**S. S. Khekhaliya**
-
-* Website: [sskhekhaliya](https://www.sskhekhaliya.com)
-* Instagram: [@sskhekhaliya](https://www.instagram.com/sskhekhaliya)
-* GitHub: [@sskhekhaliya](https://www.github.com/sskhekhaliya)
-
-**Contributing**
-
-We welcome contributions to this project! If you have improvements or bug fixes, feel free to create a pull request. Before making a pull request, please ensure that your code adheres to the project's coding style and formatting guidelines (if any).
-
-**License**
-
-This project is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
