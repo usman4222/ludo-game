@@ -1,0 +1,153 @@
+/* 🎨 Ludo Colors */
+:root {
+  --ludo-red: #ff0800;
+  --ludo-blue: #007bff;
+  --ludo-green: #28a745;
+  --ludo-yellow: #ffc40c;
+
+  --shadow-elegant: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 20px rgba(0, 123, 255, 0.6);
+}
+
+/* Full setup container */
+.setup-container {
+  min-height: 100vh;
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Setup card (the box in center) */
+.setup-card {
+  max-width: 700px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-elegant);
+  text-align: center;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+/* Hero section */
+.setup-header {
+  position: relative;
+  margin-bottom: 24px;
+}
+.setup-banner {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.setup-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Player selection */
+.setup-selection {
+  margin-bottom: 20px;
+}
+.setup-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.setup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.setup-btn {
+  width: 100px;
+  height: 80px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.setup-btn:hover {
+  transform: scale(1.05);
+  border-color: var(--ludo-blue);
+}
+.setup-btn.active {
+  background: linear-gradient(
+    to right,
+    var(--ludo-red),
+    var(--ludo-blue),
+    var(--ludo-green)
+  );
+  color: white;
+  border: none;
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Start button */
+.start-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    var(--ludo-red),
+    var(--ludo-blue),
+    var(--ludo-green)
+  );
+  color: white;
+  box-shadow: var(--shadow-glow);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.start-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Hint text when no player selected */
+.hint-text {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #777;
+  font-style: italic;
+  animation: pulse 1.5s infinite;
+}
+
+/* Rules section */
+.setup-rules {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+  text-align: left;
+}
+.rules-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

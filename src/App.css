@@ -1,12 +1,22 @@
+/* Default App layout (for game screen) */
 .App {
-  padding: 25px;
+  padding: 50px;
   text-align: center;
   height: calc(100vh - 50px);
-  width: calc(100% - 70px);
   display: grid;
-  grid-template-columns: 70% 30%; /* First column takes 70%, second takes 30% */
+  grid-template-columns: 70% 30%;
   gap: 20px;
 }
+
+/* 🛑 Disable grid & width when in Setup screen */
+.setup-screen .App {
+  display: block !important;
+  grid-template-columns: none !important;
+  height: auto !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
 
 #board-container{
   overflow: hidden;
@@ -61,7 +71,7 @@ hr {
     height: calc(100vh - 70px);
     width: calc(100vw - 30px);
     grid-template-columns: 100%;
-    gap: 20px /* Single column layout for mobile view */
+    gap: 20px 
   } 
 }
 

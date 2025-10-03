@@ -9,7 +9,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     overflow: hidden;
     font-size: large;
-    flex-basis: 70%
+    /* flex-basis: 70% */
 }
 
 #settings > div {
@@ -35,6 +35,7 @@
     display: flex;
     justify-content: space-around;
     font-size: small;
+    padding-bottom: 10px;
 }
 
 .zoom-board-btn, .zoom-dice-btn {

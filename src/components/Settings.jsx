@@ -72,7 +72,7 @@ const Settings = ({setBoardRotate }) => {
         </div>
         <div className="game-settings">
           <div className="zoom-settings">
-          <p>zoom</p>
+          <p>Zoom</p>
           <div className="zoom-btn">
           <div className="zoom-board-btn">
             <span
@@ -81,7 +81,7 @@ const Settings = ({setBoardRotate }) => {
             >
               zoom_in
             </span>
-            <span>board</span>
+            <span>Board</span>
             <span
               className="material-symbols-outlined icons"
               onClick={boardZoomOut}
@@ -110,7 +110,7 @@ const Settings = ({setBoardRotate }) => {
         </div>
         <div className="vertical-line"></div>
         <div className="rotate-settings">
-          <p>rotate</p>
+          <p>Rotate</p>
           <div className="rotate-btn">
             <div>
             <span className="material-symbols-outlined icons" onClick={rotateLeft}>rotate_left</span>
