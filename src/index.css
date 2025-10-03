@@ -1,7 +1,6 @@
 body {
-  height: 100vh;
-  overflow: hidden;
   margin: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: aliceblue;
@@ -10,11 +9,12 @@ body {
   font-weight: 100;
   letter-spacing: 1px;
   font-size: small;
+  /* removed height: 100vh */
 }
 
 body::before {
   content: '';
-  position: absolute;
+  position: fixed; /* fixed so background stays while scrolling */
   top: 0;
   left: 0;
   width: 100%;
@@ -23,14 +23,14 @@ body::before {
   background-size: cover;
   background-position: center;
   filter: blur(5px); /* Adjust the blur radius as needed */
-  z-index: -1; /* Ensure the pseudo-element stays behind the content */
+  z-index: -1; /* stays behind content */
 }
 
+/* Typography */
 p {
   text-align: left;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

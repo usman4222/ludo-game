@@ -41,19 +41,23 @@ export const GameProvider = ({ children }) => {
   useEffect(() => {
     function handleResize() {
       const screenWidth = window.innerWidth;
-      let newBoardSize = 0.8;
+      let newBoardSize;
 
-      if (screenWidth < 1025 && screenWidth >= 768) {
-        newBoardSize = 0.8;
-        defaultBoardSize.current = 0.8;
-      } else if (screenWidth < 768 && screenWidth >= 550) {
+      if (screenWidth >= 1025) {
+        // Desktop / large laptop
+        newBoardSize = 0.6;
+      } else if (screenWidth >= 768) {
+        // Tablets / medium screens
+        newBoardSize = 0.6;
+      } else if (screenWidth >= 550) {
+        // Small tablets / large phones
         newBoardSize = 0.5;
-        defaultBoardSize.current = 0.5;
-      } else if (screenWidth < 768) {
-        newBoardSize = 0.35;
-        defaultBoardSize.current = 0.35;
+      } else {
+        // Mobile phones
+        newBoardSize = 0.33;
       }
 
+      defaultBoardSize.current = newBoardSize;
       setSize((prevSize) => ({ ...prevSize, board: newBoardSize }));
     }
 
