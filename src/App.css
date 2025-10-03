@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .App-link {
@@ -78,5 +79,8 @@ hr {
 @media screen and (min-width: 550px) {
   .mobile-current-player {
     display: none;
+  }
+  .dice-container{
+    margin-bottom: 20px;
   }
 }
